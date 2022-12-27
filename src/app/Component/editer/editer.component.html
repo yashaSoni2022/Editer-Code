@@ -1,0 +1,81 @@
+<div>
+    <!-- header -->
+    <nav class="navbar navbar-light bg-light ">
+        <div class="container text-center p-2 ">
+            <span class="mx-auto text-bold">Online Code Editer</span>
+        </div>
+    </nav>
+</div>
+
+
+
+<div class="container h-100 mt-4">
+
+    <!-- languages & theme -->
+    <div class="row mb-4 justify-content-center mx-4">
+        <!-- languages select -->
+        <div class="col-auto col-lg-3 col-md-4 col-sm-6">
+            <div class="input-group input-group-sm">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="languages-select">Languages</label>
+                </div>
+              
+                <select [(ngModel)]="option" (click)="LCupdate()" class="languages-select" id="languages-select"
+                    #languagesSelect>" >
+                    <option value="lua">Lua</option>
+                    <option value="php">Php</option>
+                    <option value="python3">Python</option>
+                    <option value="dart">Dart</option>
+                    <option value="java">Java</option>
+
+                </select>
+            </div>
+              
+        </div>
+        <!-- theme radio buttons -->
+
+    </div>
+
+    <!-- the code editor -->
+    
+<!-- input box -->
+<div class="row mt-4">
+    <div class="col">
+        <div class="label-box border"><span class="mx-4 font-weight-light">Input</span></div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="code-editor" #codeEditor></div>
+        
+    </div>
+</div>
+        </div>
+    </div>
+
+    <!-- run, clear & beautify buttons -->
+    <div class="row mb-4 justify-content-center mx-4">
+        <div class="col-4 col-lg-2 col-md-3 col-sm-4 w-75">
+            <button type="button" class="btn btn-dark btn-sm btn-block px-4 mx-2" (click)="getCode()">
+                Run
+            </button>
+        </div>
+        <div class="col-4 col-lg-2 col-md-3 col-sm-4 w-75">
+            <button type="button" class="btn btn-primary btn-sm btn-block px-4 mx-2" (click)="clearCode()">
+                Clear
+            </button>
+        </div>
+        <div class="col-4 col-lg-2 col-md-3 col-sm-4 w-75">
+            <button type="button" class="btn btn-beautify btn-sm btn-block px-4 mx-2" (click)="beautifyContent()">
+                Beautify
+            </button>
+        </div>
+    </div>
+
+    <!-- output box -->
+    <div class="row mt-4">
+        <div class="col">
+            <div class="label-box border"><span class="mx-4 font-weight-light">Output</span></div>
+            <textarea class="form-control output" rows="6" ng disabled="true"
+                aria-label="output-textarea">{{output}}</textarea>
+        </div>
+    </div>
+</div>
